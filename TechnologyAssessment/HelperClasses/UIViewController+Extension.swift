@@ -1,6 +1,5 @@
 //
 //  UIViewController+Extension.swift
-//  SearchMovies
 
 
 import UIKit

@@ -44,11 +44,11 @@ class ArticleListViewController: UIViewController {
             return
         }
         
-        ArticleServiceManager().getPopulerArticles(period: period) { [unowned self] (data) in
-            self.articlesData = data.results?.map({ (item) -> ArticleViewModel in
+        ArticleServiceManager().getPopulerArticles(period: period) { [weak self] (data) in
+            self?.articlesData = data.results?.map({ (item) -> ArticleViewModel in
                 return ArticleViewModel(data: item)
             }) ?? []
-            self.tableViewArticles.reloadData()
+            self?.tableViewArticles.reloadData()
         }
         
     }
